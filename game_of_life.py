@@ -29,6 +29,7 @@ def draw_field(field):
                 pygame.draw.rect(WINDOW, WHITE, (quad_size*j, quad_size*i, quad_size, quad_size))
 
 def update_field(field):
+    field2 = numpy.zeros_like(field)
     for i in range(size):
         for j in range(size):
             sum_neighbors = 0
@@ -46,19 +47,25 @@ def update_field(field):
                         continue
                     if field[i+k][j+l] == 1:
                         sum_neighbors = sum_neighbors + 1
-            
-            
+            if field[i][j] == 1:
+                if sum_neighbors == 2 or sum_neighbors == 3:
+                    field2[i][j] = 1
+            else:
+                if sum_neighbors == 3:
+                    field2[i][j] = 1
+    print("Iteration happened!")
+    return field2
 
 isActive = True
 while isActive:
-    
+    WINDOW.fill(BLACK)
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             isActive = False
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
                 isActive = False
-    update_field(field)
+    field = update_field(field)
     draw_field(field)
     pygame.display.update()
 
