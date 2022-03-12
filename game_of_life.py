@@ -10,7 +10,87 @@ import numpy
 import pygame
 
 size = 100
-field = numpy.random.randint(0, 2, (size, size))
+field = numpy.zeros((size, size))  #numpy.random.randint(0, 2, (size, size))
+
+# Hive
+# field[49][50] = 1
+# field[50][49] = 1
+# field[50][51] = 1
+# field[51][49] = 1
+# field[51][51] = 1
+# field[52][50] = 1
+
+# # Boat
+# field[19][19] = 1
+# field[20][18] = 1
+# field[20][20] = 1
+# field[21][19] = 1
+# field[21][21] = 1
+# field[22][20] = 1
+# field[22][22] = 1
+# field[23][21] = 1
+# field[23][22] = 1
+
+# # Glider
+# field[60][60] = 1
+# field[61][61] = 1
+# field[62][59] = 1
+# field[62][60] = 1
+# field[62][61] = 1
+
+# Glider gun
+#41
+#........................O........... 40
+#......................O.O........... 41
+#............OO......OO............OO 42
+#...........O...O....OO............OO 43
+#OO........O.....O...OO.............. 44
+#OO........O...O.OO....O.O........... 45
+#..........O.....O.......O........... 46
+#...........O...O.................... 47
+#............OO...................... 48
+field[40][65] = 1
+field[41][63] = 1
+field[41][65] = 1
+field[42][61] = 1
+field[42][62] = 1
+field[42][54] = 1
+field[42][53] = 1
+field[42][75] = 1
+field[42][76] = 1
+field[43][52] = 1
+field[43][56] = 1
+field[43][61] = 1
+field[43][62] = 1
+field[43][75] = 1
+field[43][76] = 1
+field[44][41] = 1
+field[44][42] = 1
+field[44][51] = 1
+field[44][57] = 1
+field[44][61] = 1
+field[44][62] = 1
+
+field[45][41] = 1
+field[45][42] = 1
+field[45][51] = 1
+field[45][55] = 1
+field[45][57] = 1
+field[45][58] = 1
+field[45][63] = 1
+field[45][65] = 1
+
+field[46][51] = 1
+field[46][57] = 1
+field[46][65] = 1
+
+field[47][52] = 1
+field[47][56] = 1
+field[48][53] = 1
+field[48][54] = 1
+
+
+
 quad_size = 5
 
 pygame.init()
